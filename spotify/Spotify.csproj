@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Classlibrary\Classlibrary.csproj" />
+    <ProjectReference Include="..\spotify_BL\spotify_BL.csproj" />
+    <ProjectReference Include="..\spotify_model\spotify_model.csproj" />
+  </ItemGroup>
+
+</Project>
