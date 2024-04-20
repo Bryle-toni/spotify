@@ -1,6 +1,8 @@
 ﻿using System;
 using spotify_model;
 using spotify_BL;
+using spotify_DL;
+
 namespace Spotify
 {
     class Program
@@ -8,147 +10,71 @@ namespace Spotify
         static void Main(string[] args)
         {
             Console.Write("Enter Username: ");
-            string USERName = Console.ReadLine();
+            string userName = Console.ReadLine();
 
-            verify spotify_data = new verify();
-            bool result = spotify_data.verifyUser(USERName);
+            verify spotifyData = new verify();
+            bool result = spotifyData.verifyUser(userName);
 
             if (result)
             {
-
-                Playlist myBestSongsPlaylist = new Playlist();
-                myBestSongsPlaylist.name = "recommended songs..";
-                Song No1Song = new Song();
-
-                No1Song.top = "1";
-                No1Song.title = "Talking To The Moon";
-                No1Song.artist = "Bruno Mars";
-                No1Song.album = "Doo-Wops & Hooligans";
-                No1Song.songwriter = "Bruno Mars, Philip Lawrence, Ari Levine, Albert Winkler, Jeff Bhasker";
-                No1Song.producer = "The Smeezingtons";
-                No1Song.releaseyear = "2011";
-                No1Song.lengthTime = "3:37";
-
-                Song No2Song = new Song
+                bool exit = false;
+                while (!exit)
                 {
-                    top = "2",
-                    title = "You Belong With Me",
-                    artist = "Taylor Swift",
-                    album = "Fearless",
-                    songwriter = "Taylor Swift, Liz Rose",
-                    producer = "Taylor Swift, Nathan Chapman",
-                    releaseyear = "2009",
-                    lengthTime = "3:52",
-                };
+                    Console.WriteLine("Please choose a date:");
+                    Console.WriteLine("1. April 1, 2024");
+                    Console.WriteLine("2. April 2, 2024");
+                    Console.WriteLine("3. April 3, 2024");
+                    Console.WriteLine("4. April 4, 2024");
+                    Console.WriteLine("5. April 5, 2024");
+                    Console.Write("Enter your choice (1-5): ");
+                    int choice;
+                    while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 5)
+                    {
+                        
+                        Console.Write("Enter your choice (1-5): ");
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
+                    }
 
-                Song No3Song = new Song
-                {
-                    top = "3",
-                    title = "Circles",
-                    artist = "Post Malone",
-                    album = "Hollywood's Bleeding",
-                    songwriter = "Austin Post, Louis Bell, Adam Feeney, Kaan Gunesberk",
-                    producer = "Post Malone, Louis Bell, Frank Dukes",
-                    releaseyear = "2019",
-                    lengthTime = "3:35",
-                };
+                    DateTime selectedDate;
+                    switch (choice)
+                    {
+                        case 1:
+                            selectedDate = new DateTime(2024, 4, 1);
+                            break;
+                        case 2:
+                            selectedDate = new DateTime(2024, 4, 2);
+                            break;
+                        case 3:
+                            selectedDate = new DateTime(2024, 4, 3);
+                            break;
+                        case 4:
+                            selectedDate = new DateTime(2024, 4, 4);
+                            break;
+                        case 5:
+                            selectedDate = new DateTime(2024, 4, 5);
+                            break;
+                        default:
+                            selectedDate = DateTime.Now;
+                            break;
+                    }
 
-                Song No4Song = new Song
-                {
-                    top = "4",
-                    title = "Baby",
-                    artist = "Justin Bieber",
-                    album = "My World 2.0",
-                    songwriter = "Justin Bieber, Christopher Stewart, Terius Nash, Christopher Bridges, Christina Milian",
-                    producer = "Tricky Stewart, The-Dream",
-                    releaseyear = "2010",
-                    lengthTime = "3:34",
-                };
+                    Song[] top10Songs = SpotifyList.GetTop10Songs(selectedDate);
 
-                Song No5Song = new Song
-                {
-                    top = "5",
-                    title = "Every Breath You Take",
-                    artist = "The Police",
-                    album = "Synchronicity",
-                    songwriter = "Sting",
-                    producer = "The Police, Hugh Padgham",
-                    releaseyear = "1983",
-                    lengthTime = "3:56",
-                };
+                    SongInfo myBestSongsPlaylist = new SongInfo();
+                    myBestSongsPlaylist.name = "Top 10";
 
-                Song No6Song = new Song
-                {
-                    top = "6",
-                    title = "An Art Gallery Could Never Be As Unique As You",
-                    artist = "mrld",
-                    album = "An Art Gallery Could Never Be As Unique As You",
-                    songwriter = "mrld, Meriel de Jesus",
-                    producer = "mrld, Meriel de Jesus",
-                    releaseyear = "2019",
-                    lengthTime = "2:38",
-                };
+                    Console.WriteLine("Top 10 Songs for {selectedDate.ToShortDateString()}:");
 
-                Song No7Song = new Song
-                {
-                    top = "7",
-                    title = "Sleep Tonight",
-                    artist = "December Avenue",
-                    album = "December Avenue",
-                    songwriter = "December Avenue",
-                    producer = "December Avenue",
-                    releaseyear = "2017",
-                    lengthTime = "4:49",
-                };
+                    foreach (var song in top10Songs)
+                    {
+                        myBestSongsPlaylist.DisplaySongInfo(song);
+                    }
 
-                Song No8Song = new Song
-                {
-                    top = "8",
-                    title = "Beauty And A Beat",
-                    artist = "Justin Bieber, Nicki Minaj",
-                    album = "Believe",
-                    songwriter = "Max Martin, Anton Zaslavski, Savan Kotecha, Onika Maraj",
-                    producer = "Max Martin, Zedd",
-                    releaseyear = "2012",
-                    lengthTime = "3:47",
-                };
-
-                Song No9Song = new Song
-                {
-                    top = "9",
-                    title = "I Like Me Better",
-                    artist = "Lauv",
-                    album = "I Met You When I Was 18",
-                    songwriter = "Lauv, Michael Matosic",
-                    producer = "Lauv",
-                    releaseyear = "2017",
-                    lengthTime = "3:17",
-                };
-
-                Song No10Song = new Song
-                {
-                    top = "10",
-                    title = "Mean It",
-                    artist = "Lauv, LANY",
-                    album = "How I'm Feeling",
-                    songwriter = "Ari Leff, Paul Klein, Michael Matosic, Michael Pollack, John Hill, Jordan Palmer",
-                    producer = "LANY, Mike Crossey, Lauv",
-                    releaseyear = "2019",
-                    lengthTime = "3:52",
-                };
-
-                myBestSongsPlaylist.DisplaySongInfo(No1Song);
-                myBestSongsPlaylist.DisplaySongInfo(No2Song);
-                myBestSongsPlaylist.DisplaySongInfo(No3Song);
-                myBestSongsPlaylist.DisplaySongInfo(No4Song);
-                myBestSongsPlaylist.DisplaySongInfo(No5Song);
-                myBestSongsPlaylist.DisplaySongInfo(No6Song);
-                myBestSongsPlaylist.DisplaySongInfo(No7Song);
-                myBestSongsPlaylist.DisplaySongInfo(No8Song);
-                myBestSongsPlaylist.DisplaySongInfo(No9Song);
-                myBestSongsPlaylist.DisplaySongInfo(No10Song);
+                    Console.WriteLine("Do you want to choose another date? (yes/no)");
+                    string response = Console.ReadLine();
+                    exit = response.ToLower() != "yes";
+                }
             }
-
             else
             {
                 Console.WriteLine("User not found.");

@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Classlibrary\Classlibrary.csproj" />
     <ProjectReference Include="..\spotify_BL\spotify_BL.csproj" />
+    <ProjectReference Include="..\spotify_DL\spotify_DL.csproj" />
     <ProjectReference Include="..\spotify_model\spotify_model.csproj" />
   </ItemGroup>
 

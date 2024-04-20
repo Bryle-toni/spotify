@@ -5,13 +5,11 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Spotify\Spotify.csproj", "{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classlibrary", "Classlibrary\Classlibrary.csproj", "{B6164148-222B-415F-8C12-8728CD5B39E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_BL", "spotify_BL\spotify_BL.csproj", "{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spotify_BL", "spotify_BL\spotify_BL.csproj", "{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_DL", "spotify_DL\spotify_DL.csproj", "{42656087-0FAA-45C9-B1F5-DE228EF53259}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spotify_DL", "spotify_DL\spotify_DL.csproj", "{42656087-0FAA-45C9-B1F5-DE228EF53259}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "spotify_model", "spotify_model\spotify_model.csproj", "{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_model", "spotify_model\spotify_model.csproj", "{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6164148-222B-415F-8C12-8728CD5B39E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6164148-222B-415F-8C12-8728CD5B39E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6164148-222B-415F-8C12-8728CD5B39E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6164148-222B-415F-8C12-8728CD5B39E9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
