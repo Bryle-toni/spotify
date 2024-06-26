@@ -30,7 +30,7 @@ namespace Spotify
                     int choice;
                     while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 5)
                     {
-                        
+
                         Console.Write("Enter your choice (1-5): ");
                         Console.WriteLine("Invalid choice. Please enter a number between 1 and 5.");
                     }

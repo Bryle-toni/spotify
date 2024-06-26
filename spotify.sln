@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Spotify", "Spotify\Spotify.csproj", "{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_BL", "spotify_BL\spotify_BL.csproj", "{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_DL", "spotify_DL\spotify_DL.csproj", "{42656087-0FAA-45C9-B1F5-DE228EF53259}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "spotify_model", "spotify_model\spotify_model.csproj", "{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{30249D47-8188-4890-BC3E-36397AFD1191}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C5116B6D-17BF-4780-85DF-4AD9FF7ADA32}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB5F8DC1-76AA-4FC2-8685-0DF0238DA3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89EC3CF4-BE79-4071-8969-45A71D8F4DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30249D47-8188-4890-BC3E-36397AFD1191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30249D47-8188-4890-BC3E-36397AFD1191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30249D47-8188-4890-BC3E-36397AFD1191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30249D47-8188-4890-BC3E-36397AFD1191}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

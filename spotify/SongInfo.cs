@@ -14,11 +14,6 @@ namespace spotify_DL
             Console.WriteLine("Top {song.top}");
             Console.WriteLine("TITLE: {song.title}");
             Console.WriteLine("ARTIST: {song.artist}");
-            Console.WriteLine("ALBUM: {song.album}");
-            Console.WriteLine("SONGWRITER: {song.songwriter}");
-            Console.WriteLine("PRODUCER: {song.producer}");
-            Console.WriteLine("RELEASE YEAR: {song.releaseyear}");
-            Console.WriteLine("LENGTHTIME: {song.lengthTime}");
             Console.WriteLine("-------------------");
         }
     }

@@ -1,50 +1,44 @@
-﻿using spotify_model;
+﻿using System.Collections.Generic;
+using spotify_model;
+using spotify_DL;
 
-namespace spotify_DL
+namespace spotify_data
 {
-    public class spotify_data
+    public class SpotifyData
     {
-        List<spotify_mo> Account = new List<spotify_mo>();
-        public spotify_data()
+        List<Song> songs;
+        SqlDbData sqlData;
+
+        public SpotifyData()
         {
-            CreateUserData();
+            songs = new List<Song>();
+            sqlData = new SqlDbData();
         }
 
-        private void CreateUserData()
+        public List<Song> GetSongs()
         {
-            spotify_mo user1 = new spotify_mo
-            {
-                USERName = "Atienza"
-            };
-
-            spotify_mo user2 = new spotify_mo
-            {
-                USERName = "Bryle"
-            };
-
-            spotify_mo user3 = new spotify_mo
-            {
-                USERName = "Anthony"
-            };
-
-            Account.Add(user1);
-            Account.Add(user2);
-            Account.Add(user3);
+            songs = sqlData.GetSongs();
+            return songs;
         }
 
-        public spotify_mo GetUser(string USERName)
+        public spotify_mo GetUser(string userName)
         {
-            spotify_mo foundUser = new spotify_mo();
+            return sqlData.GetUser(userName);
+        }
 
-            foreach (var user in Account)
-            {
-                if (USERName == user.USERName)
-                {
-                    foundUser = user;
-                }
-            }
+        public int AddSong(Song song)
+        {
+            return sqlData.AddSong(song.top, song.title, song.artist);
+        }
 
-            return foundUser;
+        public int UpdateSong(Song song)
+        {
+            return sqlData.UpdateSong(song.top, song.title, song.artist);
+        }
+
+        public int DeleteSong(Song song)
+        {
+            return sqlData.DeleteSong(song.top, song.title, song.artist);
         }
     }
 }
