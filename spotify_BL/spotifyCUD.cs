@@ -6,8 +6,8 @@ namespace spotify_BL
 {
     public class SongCUD
     {
-        private SongValidationServices validationServices = new SongValidationServices();
-        private SqlDbData songData = new SqlDbData();
+        SongValidationServices validationServices = new SongValidationServices();
+        SqlDbData songData = new SqlDbData();
 
         public bool CreateSong(Song song)
         {
