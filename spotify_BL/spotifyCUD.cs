@@ -25,7 +25,7 @@ namespace spotify_BL
         {
             bool result = false;
 
-            if (validationServices.CheckIfSongExists(song.top, song.title, song.artist))
+            if (validationServices.CheckIfTopExists(song.top))
             {
                 result = songData.UpdateSong(song.top, song.title, song.artist) > 0;
             }

@@ -18,5 +18,10 @@ namespace spotify_business
             bool result = getServices.GetSong(top, title, artist) != null;
             return result;
         }
+        public bool CheckIfTopExists(string top)
+        {
+            bool result = getServices.GetSongByTop(top) != null;
+            return result;
+        }
     }
 }

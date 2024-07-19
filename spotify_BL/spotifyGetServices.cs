@@ -41,5 +41,19 @@ namespace spotify_business
             }
             return foundSong;
         }
+        public Song GetSongByTop(string top)
+        {
+            Song foundSong = null;
+            var allSongs = GetAllSongs();
+            foreach (var song in allSongs)
+            {
+                if (song.top == top)
+                {
+                    foundSong = song;
+                    break;
+                }
+            }
+            return foundSong;
+        }
     }
 }
