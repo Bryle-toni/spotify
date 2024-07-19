@@ -2,6 +2,6 @@
 {
     public class spotify_mo
     {
-        public string USERName;
+        public string USERName { get; set; }
     }
 }

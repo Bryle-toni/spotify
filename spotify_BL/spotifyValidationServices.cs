@@ -9,7 +9,7 @@ namespace spotify_business
 
         public bool CheckIfArtistExists(string artist)
         {
-            bool result = getServices.GetSongsByArtist(artist).Count > 0; 
+            bool result = getServices.GetSongsByArtist(artist).Count > 0;
             return result;
         }
 

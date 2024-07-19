@@ -1,5 +1,4 @@
-﻿using System;
-namespace spotify_model
+﻿namespace spotify.API
 {
     public class Song
     {

@@ -1,6 +1,7 @@
 ﻿using spotify_model;
 using spotify_data;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace spotify_business
 {
@@ -9,30 +10,28 @@ namespace spotify_business
         public List<Song> GetAllSongs()
         {
             SpotifyData songData = new SpotifyData();
-
             return songData.GetSongs();
         }
 
         public List<Song> GetSongsByArtist(string artist)
         {
             List<Song> songsByArtist = new List<Song>();
-
-            foreach (var song in GetAllSongs())
+            var allSongs = GetAllSongs();
+            foreach (var song in allSongs)
             {
                 if (song.artist == artist)
                 {
                     songsByArtist.Add(song);
                 }
             }
-
             return songsByArtist;
         }
 
         public Song GetSong(string top, string title, string artist)
         {
             Song foundSong = null;
-
-            foreach (var song in GetAllSongs())
+            var allSongs = GetAllSongs();
+            foreach (var song in allSongs)
             {
                 if (song.top == top && song.title == title && song.artist == artist)
                 {
@@ -40,7 +39,6 @@ namespace spotify_business
                     break;
                 }
             }
-
             return foundSong;
         }
     }

@@ -19,39 +19,53 @@ namespace spotify_DL
 
         public List<Song> GetSongs()
         {
-            string selectStatement = "SELECT top, title, artist FROM Song";
+            string selectStatement = "SELECT [top], title, artist FROM Song";
             SqlCommand selectCommand = new SqlCommand(selectStatement, sqlConnection);
 
-            sqlConnection.Open();
             List<Song> songs = new List<Song>();
 
-            SqlDataReader reader = selectCommand.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                string top = reader["top"].ToString();
-                string title = reader["title"].ToString();
-                string artist = reader["artist"].ToString();
+                sqlConnection.Open();
+                SqlDataReader reader = selectCommand.ExecuteReader();
 
-                Song readSong = new Song
+                while (reader.Read())
                 {
-                    top = top,
-                    title = title,
-                    artist = artist
-                };
+                    string top = reader["top"].ToString();
+                    string title = reader["title"].ToString();
+                    string artist = reader["artist"].ToString();
 
-                songs.Add(readSong);
+                    Song readSong = new Song
+                    {
+                        top = top,
+                        title = title,
+                        artist = artist
+                    };
+
+                    songs.Add(readSong);
+                }
+                reader.Close();
             }
-
-            sqlConnection.Close();
+            catch (Exception ex)
+            {
+                // Log or handle the exception
+                Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
 
             return songs;
         }
 
 
+
+
+
         public int AddSong(string top, string title, string artist)
         {
-            string insertStatement = "INSERT INTO Song (top, title, artist) VALUES (@top, @title, @artist)";
+            string insertStatement = "INSERT INTO Song ([top], title, artist) VALUES (@top, @title, @artist)";
             SqlCommand insertCommand = new SqlCommand(insertStatement, sqlConnection);
 
             insertCommand.Parameters.AddWithValue("@top", top);
@@ -65,9 +79,10 @@ namespace spotify_DL
             return success;
         }
 
+
         public int UpdateSong(string top, string title, string artist)
         {
-            string updateStatement = "UPDATE Song SET title = @title, artist = @artist WHERE top = @top";
+            string updateStatement = "UPDATE Song SET title = @title, artist = @artist WHERE [top] = @top";
             SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
 
             updateCommand.Parameters.AddWithValue("@title", title);
@@ -81,9 +96,10 @@ namespace spotify_DL
             return success;
         }
 
+
         public int DeleteSong(string top, string title, string artist)
         {
-            string deleteStatement = "DELETE FROM Song WHERE top = @top AND title = @title AND artist = @artist";
+            string deleteStatement = "DELETE FROM Song WHERE [top] = @top AND title = @title AND artist = @artist";
             SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
 
             deleteCommand.Parameters.AddWithValue("@top", top);
@@ -96,6 +112,7 @@ namespace spotify_DL
 
             return success;
         }
+
 
         public spotify_mo GetUser(string userName)
         {
@@ -117,5 +134,6 @@ namespace spotify_DL
 
             return user;
         }
+
     }
 }
