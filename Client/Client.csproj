@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\spotify_BL\spotify_BL.csproj" />
     <ProjectReference Include="..\spotify_DL\spotify_DL.csproj" />
     <ProjectReference Include="..\spotify_model\spotify_model.csproj" />

@@ -9,7 +9,8 @@ namespace spotify_DL
     {
         string connectionString
 
-            = "Server = tcp:4.145.91.8,1433; Database = Spotifying; User Id = sa; Password = integ2!";
+           // "Server = tcp:4.145.91.8,1433; Database = Spotifying; User Id = sa; Password = integ2!";
+           = "Data Source=BRYLE\\SQLEXPRESS;Initial Catalog=Spotifying;Integrated Security=True;";
 
 
         SqlConnection sqlConnection;
